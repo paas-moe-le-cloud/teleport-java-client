@@ -1,5 +1,9 @@
 before_install:
   - uname -a
-  - sudo apt update -y
-  - sudo apt install -y protobuf-compiler
+  - env
+  - curl -L https://github.com/google/protobuf/releases/download/v3.6.0/protoc-3.6.0-linux-x86_64.zip -o /tmp/protoc.zip
+  - unzip /tmp/protoc.zip -d "$HOME"/protoc
+  - export PATH=$PATH:$HOME/protoc/bin
   - protoc -version
+env:
+  - PATH=$HOME/protoc/bin:$PATH
