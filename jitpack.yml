@@ -1,3 +1,5 @@
 before_install:
-  - apt-get install -y protobuf-compiler
+  - uname -a
+  - apt update -y
+  - apt install -y protobuf-compiler
   - protoc -version
