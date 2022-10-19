@@ -6,4 +6,4 @@ before_install:
   - export PATH=$PATH:$HOME/protoc/bin
   - protoc -version
 env:
-  - PATH=$HOME/protoc/bin:$PATH
+  PATH=$HOME/protoc/bin:$PATH
