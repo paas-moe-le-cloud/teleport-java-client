@@ -13,7 +13,14 @@
   
   <packaging>pom</packaging>
   
+  <scm>
+    <developerConnection>${scm.developerConnection}</developerConnection>
+  </scm>
+  
   <properties>
+    <git.uri>git@github.com:paas-moe-le-cloud/teleport-java-client.git</git.uri>
+    <scm.developerConnection>scm:git:${git.uri}</scm.developerConnection>
+  
     <java.version>11</java.version>
     <grpc.version>1.49.0</grpc.version>
     <protobuf.version>3.21.7</protobuf.version>
