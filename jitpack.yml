@@ -5,5 +5,5 @@ before_install:
   - unzip /tmp/protoc.zip -d "$HOME"/protoc
   - export PATH=$PATH:$HOME/protoc/bin
   - protoc -version
-env:
-  PATH=$HOME/protoc/bin:$PATH
+#env:
+#  PATH: $HOME/protoc/bin:$PATH
