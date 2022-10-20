@@ -43,6 +43,7 @@ jobs:
     file: ci-src/.concourse/tasks/publish/publish.yml
     params:
       GIT_BRANCH: main
+      GIT_USER_EMAIL: admin+concourse-paasas@daniellavoie.dev
 
 
 - name: release-main
