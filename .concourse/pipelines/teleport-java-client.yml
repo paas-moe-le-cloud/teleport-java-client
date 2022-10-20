@@ -6,7 +6,7 @@ resources:
   source: 
     uri: git@github.com:paas-moe-le-cloud/teleport-java-client.git
     private_key: ((git.ssh-private-key))
-    branch: ((git-branch))
+    branch: main
     paths:
     - .concourse
 
@@ -15,13 +15,23 @@ resources:
   source: 
     uri: git@github.com:paas-moe-le-cloud/teleport-java-client.git
     private_key: ((git.ssh-private-key))
-    branch: ((git-branch))
+    branch: main
+    ignore_paths:
+    - .concourse
+    - helm
+
+- name: repository
+  type: git
+  source: 
+    uri: git@github.com:paas-moe-le-cloud/teleport-java-client.git
+    private_key: ((git.ssh-private-key))
+    branch: repository
     ignore_paths:
     - .concourse
     - helm
 
 jobs:
-- name: publish
+- name: publish-main
   plan:
   - in_parallel:
     - get: src
@@ -32,10 +42,9 @@ jobs:
     file: ci-src/.concourse/tasks/publish/publish.yml
     params:
       GIT_BRANCH: main
-      GIT_PRIVATE_KEY: (())
 
 
-- name: release
+- name: release-main
   plan:
   - in_parallel:
     - get: src
