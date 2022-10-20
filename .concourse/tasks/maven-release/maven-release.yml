@@ -1,0 +1,28 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: repo.startreedata.io/external-docker-registry/ci-java-17
+    tag: latest
+
+inputs:
+- name: ci
+- name: src
+
+caches: 
+- path: src/m2
+
+outputs:
+- name: release-version
+- name: release-notes
+
+params:
+  GIT_BRANCH: ((git-branch))
+  GIT_USER_NAME: ((git-user-name))
+  GIT_USER_EMAIL: ((git-user-email))
+  GIT_URI: ((git-uri))
+
+run:
+  path: ci/tasks/maven-release/maven-release.sh

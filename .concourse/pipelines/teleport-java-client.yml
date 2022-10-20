@@ -1,0 +1,49 @@
+resource_types:
+
+resources:
+- name: ci-src
+  type: git
+  source: 
+    uri: git@github.com:paas-moe-le-cloud/teleport-java-client.git
+    private_key: ((git.ssh-private-key))
+    branch: ((git-branch))
+    paths:
+    - .concourse
+
+- name: src
+  type: git
+  source: 
+    uri: git@github.com:paas-moe-le-cloud/teleport-java-client.git
+    private_key: ((git.ssh-private-key))
+    branch: ((git-branch))
+    ignore_paths:
+    - .concourse
+    - helm
+
+jobs:
+- name: publish
+  plan:
+  - in_parallel:
+    - get: src
+      trigger: true
+    - get: ci-src
+  - task: publish-main
+    privileged: true
+    file: ci-src/.concourse/tasks/publish/publish.yml
+    params:
+      GIT_BRANCH: main
+      GIT_PRIVATE_KEY: (())
+
+
+- name: release
+  plan:
+  - in_parallel:
+    - get: src
+      passed: ["publish-snapshot"]
+    - get: ci-src
+  - task: release
+    privileged: true
+    file: ci-src/.concourse/tasks/release/release.yml
+
+display:
+  background_image: https://64.media.tumblr.com/d5cc2ecd26a4d02a840d5a91f515c318/tumblr_n04563a3vR1qj86bro1_500.gifv

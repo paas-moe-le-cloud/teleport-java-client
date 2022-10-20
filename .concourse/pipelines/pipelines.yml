@@ -1,0 +1,19 @@
+resources:
+- name: ci-src-teleport-java-client-main
+  type: git
+  source: 
+    uri: ((git.uri))
+    private_key: ((git.ssh-private-key))
+    branch: main
+    paths:
+    - .concourse/pipelines/teleport-java-client.yml
+
+jobs:
+- name: teleport-java-client
+  plan:
+  - get: ci-src-teleport-java-client-main
+    trigger: true
+  - set_pipeline: publish-paasas
+    file: ci-src-teleport-java-client-main/.concourse/pipelines/teleport-java-client.yml
+    instance_vars:
+      git-branch: main
