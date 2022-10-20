@@ -48,7 +48,7 @@ jobs:
   plan:
   - in_parallel:
     - get: src
-      passed: ["publish"]
+      passed: ["publish-main"]
     - get: ci-src
   - task: release
     privileged: true
