@@ -16,7 +16,7 @@ if [ -z "$GIT_USER_EMAIL" ]; then
 fi
 
 if [ -z "$GIT_URI" ]; then
-  echo "GIT_PUSH_URI is undefined." 1>&2
+  echo "GIT_URI is undefined." 1>&2
   exit 1
 fi
 

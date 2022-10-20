@@ -43,7 +43,7 @@ jobs:
     file: ci-src/.concourse/tasks/publish/publish.yml
     params:
       GIT_BRANCH: main
-      GIT_PUSH_URI: git@github.com:paas-moe-le-cloud/teleport-java-client.git
+      GIT_URI: git@github.com:paas-moe-le-cloud/teleport-java-client.git
       GIT_USER_EMAIL: admin+concourse-paasas@daniellavoie.dev
 
 
