@@ -37,6 +37,7 @@ jobs:
     - get: src
       trigger: true
     - get: ci-src
+    - get: repository
   - task: publish-main
     privileged: true
     file: ci-src/.concourse/tasks/publish/publish.yml
