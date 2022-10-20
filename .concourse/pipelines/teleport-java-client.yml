@@ -39,7 +39,7 @@ jobs:
   plan:
   - in_parallel:
     - get: src
-      passed: ["publish-snapshot"]
+      passed: ["publish"]
     - get: ci-src
   - task: release
     privileged: true
