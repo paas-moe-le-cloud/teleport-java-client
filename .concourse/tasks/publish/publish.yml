@@ -22,7 +22,7 @@ params:
   GIT_BRANCH: 
   GIT_PRIVATE_KEY: (git.ssh-private-key))
   GIT_URI:  
-  GIT_USER_NAME: 
+  GIT_USER_NAME: "Concourse PaaSaS Bot"
 
 run:
   path: ci-src/.concourse/tasks/publish/publish.sh
