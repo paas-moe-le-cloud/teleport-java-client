@@ -194,5 +194,6 @@ export M2_HOME=~/.m2 && \
   git config --global user.email "${GIT_USER_EMAIL}" && \
   git config --global user.name "${GIT_USER_NAME}" && \
   git add --all && \
-  git commit -m "ci: publish ${VERSION}" &&
+  git commit -m "ci: publish ${VERSION}" && \
+  git checkout -B ${GIT_REPOSITORY_BRANCH} && \
   git push origin ${GIT_REPOSITORY_BRANCH}
