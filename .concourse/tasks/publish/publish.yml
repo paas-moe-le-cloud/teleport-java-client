@@ -19,7 +19,8 @@ caches:
 - path: src/m2
 
 params:
-  GIT_BRANCH: 
+  GIT_BRANCH:
+  GIT_REPOSITORY_BRANCH:  repository 
   GIT_PRIVATE_KEY: (git.ssh-private-key))
   GIT_URI:  
   GIT_USER_NAME: "Concourse PaaSaS Bot"

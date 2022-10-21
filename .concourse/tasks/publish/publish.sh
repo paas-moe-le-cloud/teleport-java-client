@@ -15,13 +15,18 @@ if [ -z "$GIT_USER_EMAIL" ]; then
   exit 1
 fi
 
-if [ -z "$GIT_URI" ]; then
-  echo "GIT_URI is undefined." 1>&2
+if [ -z "$GIT_PRIVATE_KEY" ]; then
+  echo "GIT_PRIVATE_KEY is undefined." 1>&2
   exit 1
 fi
 
-if [ -z "$GIT_PRIVATE_KEY" ]; then
-  echo "GIT_PRIVATE_KEY is undefined." 1>&2
+if [ -z "$GIT_REPOSITORY_BRANCH" ]; then
+  echo "GIT_REPOSITORY_BRANCH is undefined." 1>&2
+  exit 1
+fi
+
+if [ -z "$GIT_URI" ]; then
+  echo "GIT_URI is undefined." 1>&2
   exit 1
 fi
 
@@ -182,10 +187,10 @@ export M2_HOME=~/.m2 && \
     -DcreateChecksum=true && \
   popd && \
   pushd repository && \
-  mkdir ~/.ssh
+  mkdir ~/.ssh && \
   echo $GIT_PRIVATE_KEY > ~/.ssh/id_rsa && \
   git config --global user.email "${GIT_USER_EMAIL}" && \ 
   git config --global user.name "${GIT_USER_NAME}" && \
   git add --all && \
   git commit -m "ci: publish ${VERSION}" &&
-  git push origin ${GIT_BRANCH}
+  git push origin ${GIT_REPOSITORY_BRANCH}
