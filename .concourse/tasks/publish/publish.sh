@@ -191,7 +191,7 @@ export M2_HOME=~/.m2 && \
   ssh-keyscan github.com >> ~/.ssh/known_hosts && \
   echo $GIT_PRIVATE_KEY > ~/.ssh/id_rsa && \
   chmod 600 ~/.ssh/id_rsa && \
-  git config --global user.email "${GIT_USER_EMAIL}" && \ 
+  git config --global user.email "${GIT_USER_EMAIL}" && \
   git config --global user.name "${GIT_USER_NAME}" && \
   git add --all && \
   git commit -m "ci: publish ${VERSION}" &&
