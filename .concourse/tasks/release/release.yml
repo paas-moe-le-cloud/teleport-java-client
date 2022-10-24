@@ -26,4 +26,4 @@ params:
   GIT_USER_NAME: "Concourse PaaSaS Bot"
 
 run:
-  path: ci-src/tasks/release/release.sh
+  path: ci-src/.concourse/tasks/release/release.sh
