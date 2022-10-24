@@ -53,7 +53,7 @@ export M2_HOME=~/.m2 && \
     -Dfile=proto/target/teleport-java-client-proto-${VERSION}.jar \
     -Dpackaging=jar \
     -DgeneratePom=false \
-    -DpomFile=proto/target/teleport-java-client-proto-${VERSION}.pom \
+    -DpomFile=proto/pom.xml \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   ./mvnw install:install-file \
@@ -82,7 +82,7 @@ export M2_HOME=~/.m2 && \
     -Dfile=mock-server/target/teleport-java-client-mock-server-${VERSION}.jar \
     -Dpackaging=jar \
     -DgeneratePom=false \
-    -DpomFile=mock-server/target/teleport-java-client-mock-server-${VERSION}.pom \
+    -DpomFile=mock-server/pom.xml \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   ./mvnw install:install-file \
@@ -111,7 +111,7 @@ export M2_HOME=~/.m2 && \
     -Dfile=reactor/target/teleport-java-client-reactor-${VERSION}.jar \
     -Dpackaging=jar \
     -DgeneratePom=false \
-    -DpomFile=reactor/target/teleport-java-client-reactor-${VERSION}.pom \
+    -DpomFile=reactor/pom.xml \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   ./mvnw install:install-file \
@@ -140,7 +140,7 @@ export M2_HOME=~/.m2 && \
     -Dfile=spring-boot-starter-teleport-mock-server/target/spring-boot-starter-teleport-mock-server-${VERSION}.jar \
     -Dpackaging=jar \
     -DgeneratePom=false \
-    -DpomFile=spring-boot-starter-teleport-mock-server/target/spring-boot-starter-teleport-mock-server-${VERSION}.pom \
+    -DpomFile=spring-boot-starter-teleport-mock-server/pom.xml \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   ./mvnw install:install-file \
@@ -169,7 +169,7 @@ export M2_HOME=~/.m2 && \
     -Dfile=spring-boot-starter-teleport-client/target/spring-boot-starter-teleport-client-${VERSION}.jar \
     -Dpackaging=jar \
     -DgeneratePom=false \
-    -DpomFile=spring-boot-starter-teleport-client/target/spring-boot-starter-teleport-client-${VERSION}.pom \
+    -DpomFile=spring-boot-starter-teleport-client/pom.xml \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   ./mvnw install:install-file \
