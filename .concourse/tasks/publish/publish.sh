@@ -32,6 +32,16 @@ fi
 
 export M2_HOME=~/.m2 && \
   mkdir -p ${M2_HOME} && \
+  mkdir ~/.ssh && \
+  ssh-keyscan github.com >> ~/.ssh/known_hosts && \
+  echo "$GIT_PRIVATE_KEY" > ~/.ssh/id_rsa && \
+  chmod 600 ~/.ssh/id_rsa && \
+  git config --global user.email "${GIT_USER_EMAIL}" && \
+  git config --global user.name "${GIT_USER_NAME}" && \
+  pushd repository && \
+  git fetch && \
+  git checkout -B ${GIT_REPOSITORY_BRANCH} && \
+  popd && \
   pushd src && \
   ./mvnw -DperformRelease=true install && \
   VERSION=$(./mvnw -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec) && \
@@ -192,13 +202,6 @@ export M2_HOME=~/.m2 && \
     -DcreateChecksum=true && \
   popd && \
   pushd repository && \
-  mkdir ~/.ssh && \
-  ssh-keyscan github.com >> ~/.ssh/known_hosts && \
-  echo "$GIT_PRIVATE_KEY" > ~/.ssh/id_rsa && \
-  chmod 600 ~/.ssh/id_rsa && \
-  git config --global user.email "${GIT_USER_EMAIL}" && \
-  git config --global user.name "${GIT_USER_NAME}" && \
   git add --all && \
   git commit -m "ci: publish ${VERSION}" && \
-  git checkout -B ${GIT_REPOSITORY_BRANCH} && \
   git push origin ${GIT_REPOSITORY_BRANCH}
