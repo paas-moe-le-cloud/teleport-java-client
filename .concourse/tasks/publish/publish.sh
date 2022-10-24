@@ -42,7 +42,7 @@ export M2_HOME=~/.m2 && \
     -Dversion=${VERSION} \
     -Dfile=pom.xml \
     -Dpackaging=pom \
-    -DgeneratePom=true \
+    -DgeneratePom=false \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   echo "Installing teleport-java-client-proto" && \
@@ -52,7 +52,8 @@ export M2_HOME=~/.m2 && \
     -Dversion=${VERSION} \
     -Dfile=proto/target/teleport-java-client-proto-${VERSION}.jar \
     -Dpackaging=jar \
-    -DgeneratePom=true \
+    -DgeneratePom=false \
+    -DpomFile=proto/target/teleport-java-client-proto-${VERSION}.pom \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   ./mvnw install:install-file \
@@ -80,7 +81,8 @@ export M2_HOME=~/.m2 && \
     -Dversion=${VERSION} \
     -Dfile=mock-server/target/teleport-java-client-mock-server-${VERSION}.jar \
     -Dpackaging=jar \
-    -DgeneratePom=true \
+    -DgeneratePom=false \
+    -DpomFile=mock-server/target/teleport-java-client-mock-server-${VERSION}.pom \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
   ./mvnw install:install-file \
@@ -102,16 +104,17 @@ export M2_HOME=~/.m2 && \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
     echo "Installing teleport-java-client-reactor" && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=teleport-java-client-reactor \
     -Dversion=${VERSION} \
     -Dfile=reactor/target/teleport-java-client-reactor-${VERSION}.jar \
     -Dpackaging=jar \
-    -DgeneratePom=true \
+    -DgeneratePom=false \
+    -DpomFile=reactor/target/teleport-java-client-reactor-${VERSION}.pom \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=teleport-java-client-reactor \
     -Dversion=${VERSION} \
@@ -120,7 +123,7 @@ export M2_HOME=~/.m2 && \
     -Dpackaging=jar \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=teleport-java-client-reactor \
     -Dversion=${VERSION} \
@@ -130,16 +133,17 @@ export M2_HOME=~/.m2 && \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
     echo "Installing spring-boot-starter-teleport-mock-server" && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=spring-boot-starter-teleport-mock-server \
     -Dversion=${VERSION} \
     -Dfile=spring-boot-starter-teleport-mock-server/target/spring-boot-starter-teleport-mock-server-${VERSION}.jar \
     -Dpackaging=jar \
-    -DgeneratePom=true \
+    -DgeneratePom=false \
+    -DpomFile=spring-boot-starter-teleport-mock-server/target/spring-boot-starter-teleport-mock-server-${VERSION}.pom \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=spring-boot-starter-teleport-client \
     -Dversion=${VERSION} \
@@ -148,7 +152,7 @@ export M2_HOME=~/.m2 && \
     -Dpackaging=jar \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=spring-boot-starter-teleport-client \
     -Dversion=${VERSION} \
@@ -158,16 +162,17 @@ export M2_HOME=~/.m2 && \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
     echo "Installing spring-boot-starter-teleport-client" && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=spring-boot-starter-teleport-client \
     -Dversion=${VERSION} \
     -Dfile=spring-boot-starter-teleport-client/target/spring-boot-starter-teleport-client-${VERSION}.jar \
     -Dpackaging=jar \
-    -DgeneratePom=true \
+    -DgeneratePom=false \
+    -DpomFile=spring-boot-starter-teleport-client/target/spring-boot-starter-teleport-client-${VERSION}.pom \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=spring-boot-starter-teleport-client \
     -Dversion=${VERSION} \
@@ -176,7 +181,7 @@ export M2_HOME=~/.m2 && \
     -Dpackaging=jar \
     -DlocalRepositoryPath=../repository \
     -DcreateChecksum=true && \
-    ./mvnw install:install-file \
+  ./mvnw install:install-file \
     -DgroupId=io.paasas \
     -DartifactId=spring-boot-starter-teleport-client \
     -Dversion=${VERSION} \
