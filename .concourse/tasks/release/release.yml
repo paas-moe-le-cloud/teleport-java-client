@@ -8,7 +8,7 @@ image_resource:
     tag: latest
 
 inputs:
-- name: ci
+- name: ci-src
 - name: src
 
 caches: 
@@ -26,4 +26,4 @@ params:
   GIT_USER_NAME: "Concourse PaaSaS Bot"
 
 run:
-  path: ci/tasks/release/release.sh
+  path: ci-src/tasks/release/release.sh
