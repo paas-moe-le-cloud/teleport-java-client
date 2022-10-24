@@ -39,5 +39,5 @@ mkdir -p ~/.m2 && \
   ./mvnw release:prepare \
     --batch-mode \
     -DautoVersionSubmodules=true && \
-  ./mvn release:perform -Darguments="-Dmaven.deploy.skip=true" \
+  ./mvnw release:perform -Darguments="-Dmaven.deploy.skip=true" \
   git describe --tags --abbrev=0 > ../release-version/version
