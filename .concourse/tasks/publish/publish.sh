@@ -41,6 +41,7 @@ export M2_HOME=~/.m2 && \
   pushd repository && \
   git fetch && \
   git checkout -B ${GIT_REPOSITORY_BRANCH} && \
+  git reset --hard origin/${GIT_REPOSITORY_BRANCH} && \
   popd && \
   pushd src && \
   ./mvnw -DperformRelease=true install && \
