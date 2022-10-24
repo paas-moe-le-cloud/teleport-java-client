@@ -37,6 +37,7 @@ jobs:
   - in_parallel:
     - get: src
       trigger: true
+      version: every
     - get: ci-src
     - get: repository
   - task: publish-main
