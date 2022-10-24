@@ -4,7 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: repo.startreedata.io/external-docker-registry/ci-java-17
+    repository: harbor.stg.paasas.cdkt.dev/paasas-public/java-ci
     tag: latest
 
 inputs:
