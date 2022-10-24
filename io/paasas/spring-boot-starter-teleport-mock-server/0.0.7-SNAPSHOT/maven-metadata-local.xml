@@ -3,7 +3,7 @@
   <groupId>io.paasas</groupId>
   <artifactId>spring-boot-starter-teleport-mock-server</artifactId>
   <versioning>
-    <lastUpdated>20221024124037</lastUpdated>
+    <lastUpdated>20221024141841</lastUpdated>
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
@@ -11,12 +11,12 @@
       <snapshotVersion>
         <extension>jar</extension>
         <value>0.0.7-SNAPSHOT</value>
-        <updated>20221024124037</updated>
+        <updated>20221024141841</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
         <value>0.0.7-SNAPSHOT</value>
-        <updated>20221024124037</updated>
+        <updated>20221024141841</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
