@@ -19,10 +19,11 @@ outputs:
 - name: release-notes
 
 params:
-  GIT_BRANCH: ((git-branch))
-  GIT_USER_NAME: ((git-user-name))
-  GIT_USER_EMAIL: ((git-user-email))
-  GIT_URI: ((git-uri))
+  GIT_BRANCH: 
+  GIT_PRIVATE_KEY: ((git.ssh-private-key))
+  GIT_URI:  
+  GIT_USER_EMAIL: 
+  GIT_USER_NAME: "Concourse PaaSaS Bot"
 
 run:
   path: ci/tasks/release/release.sh

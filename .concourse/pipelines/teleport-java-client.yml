@@ -55,6 +55,10 @@ jobs:
   - task: release
     privileged: true
     file: ci-src/.concourse/tasks/release/release.yml
+    params:
+      GIT_BRANCH: main
+      GIT_URI: git@github.com:paas-moe-le-cloud/teleport-java-client.git
+      GIT_USER_EMAIL: admin+concourse-paasas@daniellavoie.dev
 
 display:
   background_image: https://64.media.tumblr.com/d5cc2ecd26a4d02a840d5a91f515c318/tumblr_n04563a3vR1qj86bro1_500.gifv
