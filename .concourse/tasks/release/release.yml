@@ -25,4 +25,4 @@ params:
   GIT_URI: ((git-uri))
 
 run:
-  path: ci/tasks/maven-release/maven-release.sh
+  path: ci/tasks/release/release.sh

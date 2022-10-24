@@ -46,7 +46,6 @@ jobs:
       GIT_URI: git@github.com:paas-moe-le-cloud/teleport-java-client.git
       GIT_USER_EMAIL: admin+concourse-paasas@daniellavoie.dev
 
-
 - name: release-main
   plan:
   - in_parallel:
