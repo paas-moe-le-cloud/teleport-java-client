@@ -35,6 +35,7 @@ mkdir -p ~/.m2 && \
   git checkout ${GIT_BRANCH} && \
   git pull --ff-only && \
   git --no-pager log --decorate=short --pretty=oneline && \
+  set -x && \
   git log $(git describe --tags --abbrev=0)..HEAD --oneline | grep -o " .*" > ../release-notes/release-notes && \
   ./mvnw release:prepare \
     --batch-mode \
