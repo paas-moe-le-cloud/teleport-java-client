@@ -23,9 +23,8 @@
     <scm.developerConnection>scm:git:${git.uri}</scm.developerConnection>
   
     <java.version>11</java.version>
-    <grpc.version>1.49.0</grpc.version>
-    <protobuf.version>3.21.7</protobuf.version>
-    <tomcat-annotations-api.version>6.0.53</tomcat-annotations-api.version>
+    <grpc.version>1.50.1</grpc.version>
+    <protobuf.version>3.21.9</protobuf.version>
     <xolstice-maven-protobuf.version>0.6.1</xolstice-maven-protobuf.version>
   </properties>
   
@@ -148,12 +147,6 @@
 	    <version>${grpc.version}</version>
 	  </dependency>
 
-      <dependency> <!-- necessary for Java 9+ -->
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>annotations-api</artifactId>
-        <version>${tomcat-annotations-api.version}</version>
-        <scope>provided</scope>
-      </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>

@@ -77,8 +77,8 @@
 	</dependency>
     
     <dependency> <!-- necessary for Java 9+ -->
-      <groupId>org.apache.tomcat</groupId>
-      <artifactId>annotations-api</artifactId>
+      <groupId>jakarta.annotation</groupId>
+      <artifactId>jakarta.annotation-api</artifactId>
       <scope>provided</scope>
     </dependency>
   </dependencies>
