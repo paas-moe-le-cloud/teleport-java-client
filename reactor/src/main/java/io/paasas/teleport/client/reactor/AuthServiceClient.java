@@ -3,6 +3,7 @@ package io.paasas.teleport.client.reactor;
 import java.io.ByteArrayInputStream;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import javax.net.ssl.SSLException;
@@ -10,11 +11,13 @@ import javax.net.ssl.SSLException;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 
+import io.grpc.ManagedChannel;
 import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.shaded.io.grpc.netty.NegotiationType;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
 import io.grpc.netty.shaded.io.netty.handler.ssl.SslContextBuilder;
+import io.paasas.teleport.client.reactor.util.ChannelContext;
 import io.paasas.teleport.client.reactor.util.MonoFutureCallback;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -24,6 +27,7 @@ import proto.Authservice.GenerateTokenRequest;
 import proto.Authservice.GenerateTokenResponse;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.MonoSink;
+import reactor.core.scheduler.Schedulers;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class AuthServiceClient {
@@ -64,12 +68,32 @@ public class AuthServiceClient {
 	}
 
 	public Mono<String> generateKubernetesToken() {
-		return Mono.<GenerateTokenResponse>create(this::generateKubernetesToken)
+		return AuthServiceClient
+				.<GenerateTokenResponse>handleChannel(sink -> generateKubernetesToken(sink))
 				.map(response -> response.getToken());
 	}
 
-	private void generateKubernetesToken(MonoSink<GenerateTokenResponse> sink) {
-		createFuture(
+	private static <T> Mono<T> handleChannel(Function<MonoSink<T>, ManagedChannel> command) {
+		var context = new ChannelContext();
+
+		return Mono.<T>create(sink -> context.setManagedChannel(command.apply(sink)))
+				.doOnTerminate(() -> shutdown(context))
+				.subscribeOn(Schedulers.boundedElastic());
+	}
+
+	private static void shutdown(ChannelContext context) {
+		try {
+			if (!context.getManagedChannel().shutdown().awaitTermination(5, TimeUnit.SECONDS)) {
+				throw new RuntimeException("Channel " + context.getManagedChannel() + " could not be closed");
+			}
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private ManagedChannel generateKubernetesToken(
+			MonoSink<GenerateTokenResponse> sink) {
+		return handleFuture(
 				authService -> authService
 						.generateToken(GenerateTokenRequest.newBuilder()
 								.addRoles("Kube")
@@ -77,10 +101,19 @@ public class AuthServiceClient {
 				sink);
 	}
 
-	private <T> void createFuture(
+	private <T> ManagedChannel handleFuture(
 			Function<AuthServiceFutureStub, ListenableFuture<T>> futureSupplier,
 			MonoSink<T> sink) {
-		var channelBuilder = NettyChannelBuilder.forAddress(teleportConfiguration.getHost(), teleportConfiguration.getPort());
+		return createFuture(
+				authService -> futureSupplier.apply(authService),
+				sink);
+	}
+
+	private <T> ManagedChannel createFuture(
+			Function<AuthServiceFutureStub, ListenableFuture<T>> futureSupplier,
+			MonoSink<T> sink) {
+		var channelBuilder = NettyChannelBuilder.forAddress(teleportConfiguration.getHost(),
+				teleportConfiguration.getPort());
 
 		if (teleportConfiguration.isTlsEnabled()) {
 			channelBuilder = channelBuilder.negotiationType(NegotiationType.TLS)
@@ -89,9 +122,13 @@ public class AuthServiceClient {
 			channelBuilder = channelBuilder.usePlaintext();
 		}
 
+		var channel = channelBuilder.build();
+
 		Futures.<T>addCallback(
-				futureSupplier.apply(AuthServiceGrpc.newFutureStub(channelBuilder.build())),
+				futureSupplier.apply(AuthServiceGrpc.newFutureStub(channel)),
 				new MonoFutureCallback<T>(sink),
 				EXECUTOR);
+
+		return channel;
 	}
 }

@@ -7,10 +7,12 @@ import java.util.UUID;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
+import lombok.extern.slf4j.Slf4j;
 import proto.AuthServiceGrpc.AuthServiceImplBase;
 import proto.Authservice.GenerateTokenRequest;
 import proto.Authservice.GenerateTokenResponse;
 
+@Slf4j
 public class AuthService extends AuthServiceImplBase {
 	private static final Set<String> GENERATED_TOKENS = new HashSet<>();
 
@@ -24,6 +26,8 @@ public class AuthService extends AuthServiceImplBase {
 		String token = UUID.randomUUID().toString();
 
 		GENERATED_TOKENS.add(token);
+
+		log.info("Generated mock join token {}", token);
 
 		responseObserver.onNext(GenerateTokenResponse.newBuilder().setToken(token).build());
 		responseObserver.onCompleted();
