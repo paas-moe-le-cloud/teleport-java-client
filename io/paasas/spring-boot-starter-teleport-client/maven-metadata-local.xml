@@ -3,7 +3,7 @@
   <groupId>io.paasas</groupId>
   <artifactId>spring-boot-starter-teleport-client</artifactId>
   <versioning>
-    <release>0.0.9</release>
+    <release>0.0.10</release>
     <versions>
       <version>0.0.1-SNAPSHOT</version>
       <version>0.0.2-SNAPSHOT</version>
@@ -17,7 +17,8 @@
       <version>0.0.9-SNAPSHOT</version>
       <version>0.0.9</version>
       <version>0.0.10-SNAPSHOT</version>
+      <version>0.0.10</version>
     </versions>
-    <lastUpdated>20221107120131</lastUpdated>
+    <lastUpdated>20221107122028</lastUpdated>
   </versioning>
 </metadata>
