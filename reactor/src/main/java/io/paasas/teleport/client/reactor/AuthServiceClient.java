@@ -82,6 +82,10 @@ public class AuthServiceClient {
 	}
 
 	private static void shutdown(ChannelContext context) {
+		if (context.getManagedChannel() == null) {
+			return;
+		}
+
 		try {
 			if (!context.getManagedChannel().shutdown().awaitTermination(5, TimeUnit.SECONDS)) {
 				throw new RuntimeException("Channel " + context.getManagedChannel() + " could not be closed");
