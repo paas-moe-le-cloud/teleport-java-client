@@ -3,7 +3,7 @@
   <groupId>io.paasas</groupId>
   <artifactId>teleport-java-client-reactor</artifactId>
   <versioning>
-    <release>0.0.10</release>
+    <release>0.0.11</release>
     <versions>
       <version>0.0.1-SNAPSHOT</version>
       <version>0.0.2-SNAPSHOT</version>
@@ -19,7 +19,8 @@
       <version>0.0.10-SNAPSHOT</version>
       <version>0.0.10</version>
       <version>0.0.11-SNAPSHOT</version>
+      <version>0.0.11</version>
     </versions>
-    <lastUpdated>20221108085147</lastUpdated>
+    <lastUpdated>20221108090354</lastUpdated>
   </versioning>
 </metadata>
