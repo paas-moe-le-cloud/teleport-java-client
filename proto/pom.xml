@@ -12,7 +12,7 @@
       <extension>
         <groupId>kr.motd.maven</groupId>
         <artifactId>os-maven-plugin</artifactId>
-        <version>1.6.2</version>
+        <version>1.7.0</version>
       </extension>
     </extensions>
     
@@ -22,7 +22,7 @@
         <artifactId>protobuf-maven-plugin</artifactId>
         <configuration>
           <pluginId>grpc-java</pluginId>
-          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.50.0:exe:${os.detected.classifier}</pluginArtifact>
+          <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.50.1:exe:${os.detected.classifier}</pluginArtifact>
         </configuration>
         <executions>
           <execution>
