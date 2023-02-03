@@ -1,5 +1,6 @@
 package io.paasas.teleport.client.spring.mockserver;
 
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +11,7 @@ import org.springframework.validation.annotation.Validated;
 import io.paasas.teleport.client.mockserver.TeleportMockServer;
 import io.paasas.teleport.client.mockserver.TeleportMockServerConfiguration;
 
-@Configuration
+@AutoConfiguration
 @ConditionalOnProperty(name = "paasas.teleport.mock.enabled", havingValue = "true", matchIfMissing = false)
 public class TeleportMockServerAutoConfiguration {
 
