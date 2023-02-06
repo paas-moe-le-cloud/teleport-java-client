@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  io.paasas.teleport.client.spring.mockserver.TeleportMockServerAutoConfiguration
