@@ -4,7 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: harbor.stg.paasas.cdkt.dev/paasas-public/ci
+    repository: harbor.paasas.io/public/java-ci
     tag: latest
 
 inputs:
