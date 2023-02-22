@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>io.paasas</groupId>
+  <artifactId>teleport-java-client</artifactId>
+  <versioning>
+    <lastUpdated>20230222195608</lastUpdated>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.10.1-SNAPSHOT</value>
+        <updated>20230222195608</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>0.10.1-SNAPSHOT</version>
+</metadata>
