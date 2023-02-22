@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 22 19:51:12 GMT 2023
+teleport-java-client-mock-server-0.10.0.pom>=
+teleport-java-client-mock-server-0.10.0-sources.jar>=
+teleport-java-client-mock-server-0.10.0-javadoc.jar>=
+teleport-java-client-mock-server-0.10.0.jar>=
