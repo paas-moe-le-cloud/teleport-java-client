@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 05 20:08:58 GMT 2023
+spring-boot-starter-teleport-client-0.10.1-javadoc.jar>=
+spring-boot-starter-teleport-client-0.10.1.pom>=
+spring-boot-starter-teleport-client-0.10.1.jar>=
+spring-boot-starter-teleport-client-0.10.1-sources.jar>=

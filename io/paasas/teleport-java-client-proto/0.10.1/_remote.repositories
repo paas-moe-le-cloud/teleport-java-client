@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Jul 05 20:08:30 GMT 2023
+teleport-java-client-proto-0.10.1-javadoc.jar>=
+teleport-java-client-proto-0.10.1-sources.jar>=
+teleport-java-client-proto-0.10.1.jar>=
+teleport-java-client-proto-0.10.1.pom>=
