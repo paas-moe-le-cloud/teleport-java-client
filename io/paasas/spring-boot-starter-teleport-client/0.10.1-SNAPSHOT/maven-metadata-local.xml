@@ -3,7 +3,7 @@
   <groupId>io.paasas</groupId>
   <artifactId>spring-boot-starter-teleport-client</artifactId>
   <versioning>
-    <lastUpdated>20230414182527</lastUpdated>
+    <lastUpdated>20230705170720</lastUpdated>
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
@@ -12,23 +12,23 @@
         <classifier>javadoc</classifier>
         <extension>jar</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182527</updated>
+        <updated>20230705170720</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182524</updated>
+        <updated>20230705170717</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182524</updated>
+        <updated>20230705170717</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182521</updated>
+        <updated>20230705170714</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

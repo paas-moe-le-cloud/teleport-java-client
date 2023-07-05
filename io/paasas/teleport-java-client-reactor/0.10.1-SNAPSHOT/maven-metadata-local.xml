@@ -3,7 +3,7 @@
   <groupId>io.paasas</groupId>
   <artifactId>teleport-java-client-reactor</artifactId>
   <versioning>
-    <lastUpdated>20230414182511</lastUpdated>
+    <lastUpdated>20230705170706</lastUpdated>
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
@@ -12,23 +12,23 @@
         <classifier>javadoc</classifier>
         <extension>jar</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182511</updated>
+        <updated>20230705170706</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182509</updated>
+        <updated>20230705170704</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182509</updated>
+        <updated>20230705170704</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
         <value>0.10.1-SNAPSHOT</value>
-        <updated>20230414182508</updated>
+        <updated>20230705170702</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
