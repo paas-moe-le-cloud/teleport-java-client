@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>io.paasas</groupId>
+  <artifactId>teleport-java-client-mock-server</artifactId>
+  <versioning>
+    <lastUpdated>20230705201328</lastUpdated>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <classifier>javadoc</classifier>
+        <extension>jar</extension>
+        <value>0.10.2-SNAPSHOT</value>
+        <updated>20230705201328</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>0.10.2-SNAPSHOT</value>
+        <updated>20230705201325</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.10.2-SNAPSHOT</value>
+        <updated>20230705201325</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.10.2-SNAPSHOT</value>
+        <updated>20230705201322</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>0.10.2-SNAPSHOT</version>
+</metadata>
