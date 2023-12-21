@@ -99,9 +99,9 @@ if [ -z "$JAVA_HOME" ]; then
         javaHome="$(dirname "\"$javaExecutable\"")"
         javaExecutable="$(cd "\"$javaHome\"" && pwd -P)/javac"
       else
-        javaExecutable="$(readlink -f "\"$javaExecutable\"")"
+        javaExecutable="$(readlink -f $javaExecutable)"
       fi
-      javaHome="$(dirname "\"$javaExecutable\"")"
+      javaHome="$(dirname $javaExecutable)"
       javaHome=$(expr "$javaHome" : '\(.*\)/bin')
       JAVA_HOME="$javaHome"
       export JAVA_HOME
@@ -128,7 +128,7 @@ if [ ! -x "$JAVACMD" ] ; then
   exit 1
 fi
 
-if [ -z "$JAVA_HOME" ] ; then
+if [ -z $JAVA_HOME ] ; then
   echo "Warning: JAVA_HOME environment variable is not set."
 fi
 
