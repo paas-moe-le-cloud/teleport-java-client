@@ -1,6 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Dec 21 18:26:21 GMT 2023
-teleport-java-client-reactor-0.10.2-SNAPSHOT.pom>=
-teleport-java-client-reactor-0.10.2-SNAPSHOT-sources.jar>=
+#Wed May 08 17:35:15 GMT 2024
 teleport-java-client-reactor-0.10.2-SNAPSHOT-javadoc.jar>=
+teleport-java-client-reactor-0.10.2-SNAPSHOT-sources.jar>=
 teleport-java-client-reactor-0.10.2-SNAPSHOT.jar>=
+teleport-java-client-reactor-0.10.2-SNAPSHOT.pom>=
