@@ -27,7 +27,7 @@ mkdir -p ~/.m2 && \
   ln -fs $(pwd)/m2 ~/.m2 && \
   git config --global user.name "${GIT_USER_NAME}" && \
   git config --global user.email "${GIT_USER_EMAIL}" && \
-  mkdir ~/.ssh && \
+  mkdir ~/.ssh || true && \
   ssh-keyscan github.com >> ~/.ssh/known_hosts && \
   echo "$GIT_PRIVATE_KEY" > ~/.ssh/id_rsa && \
   chmod 600 ~/.ssh/id_rsa && \

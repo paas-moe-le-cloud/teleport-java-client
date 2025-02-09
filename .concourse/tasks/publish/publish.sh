@@ -32,7 +32,7 @@ fi
 
 export M2_HOME=~/.m2 && \
   mkdir -p ${M2_HOME} && \
-  mkdir ~/.ssh && \
+  mkdir ~/.ssh || true && \
   ssh-keyscan github.com >> ~/.ssh/known_hosts && \
   echo "$GIT_PRIVATE_KEY" > ~/.ssh/id_rsa && \
   chmod 600 ~/.ssh/id_rsa && \
