@@ -3,7 +3,7 @@
   <groupId>io.paasas</groupId>
   <artifactId>teleport-java-client</artifactId>
   <versioning>
-    <lastUpdated>20250315231113</lastUpdated>
+    <lastUpdated>20250514013742</lastUpdated>
     <snapshot>
       <localCopy>true</localCopy>
     </snapshot>
@@ -11,7 +11,7 @@
       <snapshotVersion>
         <extension>pom</extension>
         <value>0.10.2-SNAPSHOT</value>
-        <updated>20250315231113</updated>
+        <updated>20250514013742</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
